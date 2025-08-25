@@ -95,8 +95,8 @@ This project demonstrates hosting a static website on **Amazon S3** and managing
      ```
      https://<ACCOUNT_ALIAS>.signin.aws.amazon.com/console
      ```
-   * Username: `cloudlaunch-user`
-   * Password: `7BvVR8a_`  or ama@@23ama (temporary password provided during creation; user must change on first login).
+   * Username: `************`
+   * Password: `************`  (temporary password provided during creation; user must change on first login).
 
 
 ## 📌 (Optional) CloudFront Distribution
