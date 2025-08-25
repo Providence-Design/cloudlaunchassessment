@@ -1,0 +1,50 @@
+{
+	"Version": "2012-10-17",
+	"Statement": [
+		{
+			"Sid": "AllowListAllBuckets",
+			"Effect": "Allow",
+			"Action": "s3:ListAllMyBuckets",
+			"Resource": "*"
+		},
+		{
+			"Sid": "ListAllThreeBuckets",
+			"Effect": "Allow",
+			"Action": "s3:ListBucket",
+			"Resource": [
+				"arn:aws:s3:::cloudlaunch-site-bucket-providence",
+				"arn:aws:s3:::cloudlaunch-private-bucket-providence",
+				"arn:aws:s3:::cloudlaunch-visible-only-bucket-providence"
+			]
+		},
+		{
+			"Sid": "GetObjectFromSiteBucket",
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject"
+			],
+			"Resource": "arn:aws:s3:::cloudlaunch-site-bucket-providence/*"
+		},
+		{
+			"Sid": "GetPutObjectInPrivateBucket",
+			"Effect": "Allow",
+			"Action": [
+				"s3:GetObject",
+				"s3:PutObject"
+			],
+			"Resource": "arn:aws:s3:::cloudlaunch-private-bucket-providence/*"
+		},
+		{
+			"Sid": "VPCReadOnlyAccess",
+			"Effect": "Allow",
+			"Action": [
+				"ec2:DescribeVpcs",
+				"ec2:DescribeSubnets",
+				"ec2:DescribeRouteTables",
+				"ec2:DescribeSecurityGroups",
+				"ec2:DescribeInternetGateways"
+			],
+			"Resource": "*"
+		}
+	]
+}
